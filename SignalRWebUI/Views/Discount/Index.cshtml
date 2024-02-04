@@ -1,0 +1,54 @@
+﻿@model List<SignalRWebUI.Dtos.DiscountDto.ResultDiscountDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Tables</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Discount List</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							Area where discount are listed
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Title</th>
+									<th scope="col">Amount</th>
+									<th scope="col">Description</th>
+									<th scope="col">ImageUrl</th>
+									<th scope="col">Delete</th>
+									<th scope="col">Update</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<td>@item.DiscountID</td>
+										<td>@item.Title</td>
+										<td>@item.Amount</td>
+										<td>@item.Description</td>
+										<td>@item.ImageUrl</td>
+										<td><a href="/Discount/DeleteDiscount/@item.DiscountID" class="btn btn-outline-danger">Delete</a></td>
+										<td><a href="/Discount/UpdateDiscount/@item.DiscountID" class="btn btn-outline-success">Update</a></td>
+									</tr>
+								}
+							</tbody>
+						</table>
+						<a href="/Discount/CreateDiscount/" class="btn btn-outline-success">Add Discount</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

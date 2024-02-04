@@ -1,0 +1,50 @@
+﻿@model SignalRWebUI.Dtos.TestimonialDto.UpdateTestimonialDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Testimonial Testimonial</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<form method="post">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Update Testimonial</div>
+						</div>
+						<div class="card-body">
+							<input type="hidden" class="form-control" asp-for="TestimonialID" id="name">
+							<div class="form-group">
+								<label for="name">Name</label>
+								<input type="text" class="form-control" asp-for="Name" id="name">
+							</div>
+							<div class="form-group">
+								<label for="title">Title</label>
+								<input type="text" class="form-control" asp-for="Title" id="title">
+							</div>
+							<div class="form-group">
+								<label for="comment">Comment</label>
+								<input type="text" class="form-control" asp-for="Comment" id="comment">
+							</div>
+							<div class="form-group">
+								<label for="imageUrl">Image Url</label>
+								<input type="text" class="form-control" asp-for="ImageUrl" id="imageUrl">
+							</div>
+							<div class="form-group">
+								<label for="status">Status</label>
+								<input type="text" class="form-control" asp-for="Status" id="status">
+							</div>
+						</div>
+						<div class="card-action">
+							<input type="submit" class="btn btn-primary" value="Update Testimonial"></input>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+

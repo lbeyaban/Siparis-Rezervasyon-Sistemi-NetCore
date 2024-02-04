@@ -1,0 +1,54 @@
+﻿@model List<SignalRWebUI.Dtos.ContactDto.ResultContactDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Tables</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Contact List</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							Area where contact are listed
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Location</th>
+									<th scope="col">Phone</th>
+									<th scope="col">Mail</th>
+									<th scope="col">FooterDescription</th>
+									<th scope="col">Delete</th>
+									<th scope="col">Update</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<td>@item.ContactID</td>
+										<td>@item.Location</td>
+										<td>@item.Phone</td>
+										<td>@item.Mail</td>
+										<td>@item.FooterDescription</td>
+										<td><a href="/Contact/DeleteContact/@item.ContactID" class="btn btn-outline-danger">Delete</a></td>
+										<td><a href="/Contact/UpdateContact/@item.ContactID" class="btn btn-outline-success">Update</a></td>
+									</tr>
+								}
+							</tbody>
+						</table>
+						<a href="/Contact/CreateContact/" class="btn btn-outline-success">Add Contact</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
