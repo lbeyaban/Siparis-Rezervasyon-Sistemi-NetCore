@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SignalR.BusinessLayer.Abstract;
-using SignalR.DtoLayer.CategoryDto;
 using SignalR.DtoLayer.ContactDto;
 using SignalR.EntityLayer.Entities;
 
@@ -36,7 +34,11 @@ namespace SignalRApi.Controllers
                Location = createContactDto.Location,
                Phone = createContactDto.Phone,
                Mail = createContactDto.Mail,
+               FooterTitle = createContactDto.FooterTitle,
                FooterDescription = createContactDto.FooterDescription,
+               OpenDays = createContactDto.OpenDays,
+               OpenDaysDescription = createContactDto.OpenDaysDescription,
+               OpenHours = createContactDto.OpenHours,
             });
 
             return Ok("İletisim bilgisi başarılı bir şekilde eklendi");
@@ -60,7 +62,11 @@ namespace SignalRApi.Controllers
                 Location = updateContactDto.Location,
                 Phone = updateContactDto.Phone,
                 Mail = updateContactDto.Mail,
+                FooterTitle = updateContactDto.FooterTitle,
                 FooterDescription = updateContactDto.FooterDescription,
+                OpenDays = updateContactDto.OpenDays,
+                OpenDaysDescription = updateContactDto.OpenDaysDescription,
+                OpenHours = updateContactDto.OpenHours,
             });
 
             return Ok("İletişim bilgileri Başarılı bir şekilde guncellendi.");
