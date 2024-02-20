@@ -23,7 +23,7 @@ namespace SignalRWebUI.Controllers
         {
 
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7022/api/Basket/GetBasketListWithProductName/1");
+            var responseMessage = await client.GetAsync("https://localhost:7022/api/Basket/GetBasketListWithProductName/4");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -32,6 +32,18 @@ namespace SignalRWebUI.Controllers
             }
 
             return View();
+        }
+
+        public async Task<IActionResult> DeleteBasket(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.DeleteAsync($"https://localhost:7022/api/Basket/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return NoContent();
         }
     }
 }

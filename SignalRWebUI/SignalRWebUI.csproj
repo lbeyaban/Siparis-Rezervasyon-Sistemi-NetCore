@@ -10,6 +10,7 @@
     <None Remove="Views\Menu\" />
     <None Remove="Dtos\BasketDto\" />
     <None Remove="Views\Baskets\" />
+    <None Remove="Views\BookATable\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\.DS_Store" />
@@ -23,5 +24,6 @@
     <Folder Include="Views\Menu\" />
     <Folder Include="Dtos\BasketDto\" />
     <Folder Include="Views\Baskets\" />
+    <Folder Include="Views\BookATable\" />
   </ItemGroup>
 </Project>
