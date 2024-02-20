@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="BasketDto\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BasketDto\" />
+  </ItemGroup>
 </Project>
