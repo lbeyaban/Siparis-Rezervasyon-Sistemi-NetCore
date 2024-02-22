@@ -8,8 +8,10 @@
 
   <ItemGroup>
     <None Remove="BasketDto\" />
+    <None Remove="NotificationDto\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BasketDto\" />
+    <Folder Include="NotificationDto\" />
   </ItemGroup>
 </Project>

@@ -11,6 +11,8 @@
     <None Remove="Dtos\BasketDto\" />
     <None Remove="Views\Baskets\" />
     <None Remove="Views\BookATable\" />
+    <None Remove="Views\Notification\" />
+    <None Remove="Dtos\NotificationDto\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\.DS_Store" />
@@ -25,5 +27,7 @@
     <Folder Include="Dtos\BasketDto\" />
     <Folder Include="Views\Baskets\" />
     <Folder Include="Views\BookATable\" />
+    <Folder Include="Views\Notification\" />
+    <Folder Include="Dtos\NotificationDto\" />
   </ItemGroup>
 </Project>

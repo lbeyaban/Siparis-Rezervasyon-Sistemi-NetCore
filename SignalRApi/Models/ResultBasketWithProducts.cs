@@ -18,7 +18,6 @@ namespace SignalRApi.Models
 
         public string ProductName { get; set; }
 
-
     }
 }
 
