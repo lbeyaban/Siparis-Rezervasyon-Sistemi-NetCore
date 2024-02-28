@@ -1,0 +1,78 @@
+﻿@model List<SignalRWebUI.Dtos.MenuTableDto.ResultMenuTableDto>
+@{
+    ViewData["Title"] = "MenuTableWithStatus";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<script src="~/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+<script type="text/javascript">//Doküman çalıştığında connection değişkenini oluşturuyoruz. Hub connectiona Url bilgisi ile bağlanmaya çalışıyoruz.
+    $(document).ready(() => {
+        var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7022/SignalRHub").build();
+        connection.start().then(() => {
+
+            setInterval(() => {
+                connection.invoke("SendMenuTableWithStatus");
+            }, 1000)
+
+            connection.on("ReceiveMenuTableWithStatus", (value) => {
+
+                let menuTableHtml = "<div class=row>";
+                
+                $.each(value, (index, item) => {
+
+                    var statusStr = "";
+                    var cardColor = "";
+                    if (item.status == false) {
+                        statusStr = "Empty";
+                        cardColor = "card-warning"
+                        
+                    } else {
+                        statusStr = "Full";
+                        cardColor = "card-success"
+                    }
+                    
+
+                    menuTableHtml += `
+                        <div class="col-md-3">
+                            <div class="card card-stats ${cardColor}">
+                                <div class="card-body ">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="icon-big text-center">
+                                                <i class="la la-users"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-7 d-flex align-items-center">
+                                            <div class="numbers">
+                                                <p class="card-category"><strong>${item.menuName}</strong></p>
+                                                <h4 class="card-title">${statusStr}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                });
+
+                menuTableHtml += "</div>"
+
+
+                $("#menutable").html(menuTableHtml);
+
+            })
+            
+
+        }).catch((err) => console.log("err : ", err));
+    });</script>
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Instant Desk Transactions</h4>
+            <div id="menutable"></div>
+    </div>
+</div>
