@@ -13,6 +13,8 @@
     <None Remove="Views\BookATable\" />
     <None Remove="Views\Notification\" />
     <None Remove="Dtos\NotificationDto\" />
+    <None Remove="Dtos\MenuTableDto\" />
+    <None Remove="Views\MenuTable\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\.DS_Store" />
@@ -29,5 +31,7 @@
     <Folder Include="Views\BookATable\" />
     <Folder Include="Views\Notification\" />
     <Folder Include="Dtos\NotificationDto\" />
+    <Folder Include="Dtos\MenuTableDto\" />
+    <Folder Include="Views\MenuTable\" />
   </ItemGroup>
 </Project>

@@ -9,9 +9,11 @@
   <ItemGroup>
     <None Remove="BasketDto\" />
     <None Remove="NotificationDto\" />
+    <None Remove="MenuTableDto\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BasketDto\" />
     <Folder Include="NotificationDto\" />
+    <Folder Include="MenuTableDto\" />
   </ItemGroup>
 </Project>
