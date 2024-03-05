@@ -15,6 +15,7 @@
     <None Remove="Dtos\NotificationDto\" />
     <None Remove="Dtos\MenuTableDto\" />
     <None Remove="Views\MenuTable\" />
+    <None Remove="Views\Message\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\.DS_Store" />
@@ -33,5 +34,6 @@
     <Folder Include="Dtos\NotificationDto\" />
     <Folder Include="Dtos\MenuTableDto\" />
     <Folder Include="Views\MenuTable\" />
+    <Folder Include="Views\Message\" />
   </ItemGroup>
 </Project>
