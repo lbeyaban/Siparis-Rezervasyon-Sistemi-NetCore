@@ -16,6 +16,9 @@
     <None Remove="Dtos\MenuTableDto\" />
     <None Remove="Views\MenuTable\" />
     <None Remove="Views\Message\" />
+    <None Remove="Dtos\IdentityDto\" />
+    <None Remove="Views\Register\" />
+    <None Remove="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Ready-Bootstrap-Dashboard-master\.DS_Store" />
@@ -23,6 +26,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.21" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,5 +40,16 @@
     <Folder Include="Dtos\MenuTableDto\" />
     <Folder Include="Views\MenuTable\" />
     <Folder Include="Views\Message\" />
+    <Folder Include="Dtos\IdentityDto\" />
+    <Folder Include="Views\Register\" />
+    <Folder Include="Views\Login\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SignalR.EntityLayer\SignalR.EntityLayer.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\SignalR.DataAccessLayer\SignalR.DataAccessLayer.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>
